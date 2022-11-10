@@ -12,6 +12,7 @@ class TicketPart extends StatelessWidget {
   final String bottomLeftText;
   final String bottomRightText;
   final bool? isColor;
+  final bool? isColorBg;
 
   const TicketPart({
     super.key,
@@ -20,6 +21,7 @@ class TicketPart extends StatelessWidget {
     required this.bottomLeftText,
     required this.bottomRightText,
     this.isColor,
+    this.isColorBg,
   });
 
   @override
@@ -28,8 +30,8 @@ class TicketPart extends StatelessWidget {
     return SizedBox(
       width: size.width * 0.85,
       child: Container(
-        decoration: const BoxDecoration(
-          color: Colors.white,
+        decoration: BoxDecoration(
+          color: isColorBg == null ? Colors.white : Colors.transparent,
         ),
         padding:
             const EdgeInsets.only(top: 25, bottom: 25, left: 17, right: 17),
